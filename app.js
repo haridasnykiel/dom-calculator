@@ -18,9 +18,15 @@ $(function() {
 
     console.log(buttons);
 
+<<<<<<< HEAD
     $(buttons).each(buttons, function(i, v) {
 
       if (buttons[v] === "="){
+=======
+    $.each(buttons, function(i, e) {
+
+      if (buttons[e] === "="){
+>>>>>>> 3976fdeba64957f7b3a5f9c4591509917f3b178e
         displayResult(calResult);
       } else if (buttons[v] === "C") {
         clear();
@@ -31,6 +37,10 @@ $(function() {
     });
 
 
+<<<<<<< HEAD
+=======
+    });
+>>>>>>> 3976fdeba64957f7b3a5f9c4591509917f3b178e
 
     var calResult = calculate(buttons, operator, buttons);
 
