@@ -16,21 +16,23 @@ $(function() {
     var clear = $('#clear').val();
 
 
-    // console.log(buttons);
+    console.log(buttons);
 
-    for (var i = 0; i < buttons.length; i++) {
+    $(buttons).each(buttons, function(i, v) {
 
-      if (buttons[i] === "="){
+      if (buttons[v] === "="){
         displayResult(calResult);
+      } else if (buttons[v] === "C") {
+        clear();
       } else {
         addValue(buttons);
       }
 
+    });
 
 
-    }
 
-    var calResult = calculate(buttons, buttons, operator);
+    var calResult = calculate(buttons, operator, buttons);
 
     // console.log(calResult);
 
@@ -38,7 +40,7 @@ $(function() {
 
 
   // Create a function that does the maths.
-  function calculate(num1, num2, op) {
+  function calculate(num1, op, num2) {
     // ifs and elses (switch?) using num1, num2 and operator
 
 
@@ -72,8 +74,13 @@ $(function() {
       return result;
   }
 
+  function clear() {
+    $('#result').html("");
+  }
+
   function addValue(input) {
     $("#result").html(input);
+
   }
 
   // Create a function that displays the results.
