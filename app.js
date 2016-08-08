@@ -4,33 +4,35 @@ $(function() {
 
   $('button').click(function(event) {
     event.preventDefault();
-    // console.log(result);
+
+
   });
 
   // Go and get the stuff from the page.
 
-  $(function runCalculator() {
-    var fnum = parseInt($('.numbers').html());
-    var snum = parseInt($('.numbers').html());
+  $(document).ready (function () {
+    var buttons = $('.numbers').val();
     var operator = $('.operator').val();
-    var clear = $('#clear');
+    var clear = $('#clear').val();
 
 
 
 
-    for (var i = 0; i < fnum.length; i++) {
-      if (fnum[i].html() === "="){
-        $(fnum[i]).click(function() {displayResult(calResult)});
+
+    for (var i = 0; i < buttons.length; i++) {
+
+      if (buttons[i].value === "="){
+        $('buttons').click (displayResult(calResult));
       } else {
-        addValue(fnum);
+        $('buttons').click (addValue(buttons));
       }
 
+      console.log(buttons);
     }
 
-    console.log(snum);
 
 
-    var calResult = calculate(fnum, snum, operator);
+    var calResult = calculate(buttons, buttons, operator);
 
 
     // console.log(calResult);
@@ -41,7 +43,7 @@ $(function() {
 
 
   // Create a function that does the maths.
-  function calculate(num1, num2, op) {
+  $(function calculate(num1, num2, op) {
     // ifs and elses (switch?) using num1, num2 and operator
 
 
@@ -73,21 +75,20 @@ $(function() {
       }
       // console.log(result);
       return result;
-  }
+  });
 
-  // Add value to the results <p> tag.
-  function addValue(input) {
+  $(function addValue(input) {
     $("#result").html(input);
-  }
+  });
 
   // Create a function that displays the results.
-  function displayResult(result) {
+  $(function displayResult(result) {
     // put result on the page
     // console.log(result);
     $("#result").html(result);
 
 
     // console.log(result);
-  }
+  });
 
 });
