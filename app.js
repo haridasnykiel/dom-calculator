@@ -11,36 +11,24 @@ $(function() {
   // Go and get the stuff from the page.
 
   function runCalculator() {
-    var buttons = $('button').val();
+    var buttons = $('#1, #2, #3, #4, #5, #6, #7, #8, #9, #0, #dot').val();
     var operator = $('.operator').val();
-    var clear = $('#clear').val();
-
-
     console.log(buttons);
 
-<<<<<<< HEAD
-    $(buttons).each(buttons, function(i, v) {
+    $(buttons).each(function(i, v) {
 
-      if (buttons[v] === "="){
-=======
-    $.each(buttons, function(i, e) {
-
-      if (buttons[e] === "="){
->>>>>>> 3976fdeba64957f7b3a5f9c4591509917f3b178e
+      if ($('#calculate')){
         displayResult(calResult);
-      } else if (buttons[v] === "C") {
+      } else if ($('#clear')) {
         clear();
       } else {
-        addValue(buttons);
+        addValue(i);
       }
 
+      console.log(i);
     });
 
 
-<<<<<<< HEAD
-=======
-    });
->>>>>>> 3976fdeba64957f7b3a5f9c4591509917f3b178e
 
     var calResult = calculate(buttons, operator, buttons);
 
@@ -89,7 +77,7 @@ $(function() {
   }
 
   function addValue(input) {
-    $("#result").html(input);
+    $("#result").html(input + input);
 
   }
 

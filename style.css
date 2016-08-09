@@ -25,13 +25,15 @@ p {
   height: 3em;
   margin: 0.2em;
   margin-left: 0.1em;
+  padding: 0.3em;
+  padding-top: 0.8em;
   border: 5px solid #560000;
 }
 
 button {
   width: 3.5em;
   height: 2.2em;
-  padding: 0.3em;
+  padding: 0.4em;
   margin: 0.1em;
   background-color: #C88888;
 }
